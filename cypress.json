@@ -1,0 +1,14 @@
+{
+    "testFiles": "**/*.feature",
+    "ignoreTestFiles": ["*.js","*.md"],
+    "viewportWidth": 1440,
+    "viewportHeight": 920,
+    "defaultCommandTimeout":40000,
+
+  "env":{
+    "SIT2"    :  "https://sit2.bhf.csr-portal.us.insurance.dxc.com/#/" ,
+    "PILOT2"  :  "https://pilot2.bhf.csr-portal.us.insurance.dxc.com/#/",
+    "PILOT1"  :  "https://pilot.csr-portal.insurance.dxc.com/#/",
+    "SIT1"    :  "https://sit.csr-portal.hub-1.dev.us.insurance.dxc.com/#/"
+  }
+}
