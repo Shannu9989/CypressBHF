@@ -11,10 +11,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          working-directory: BHFCUCUMBER
-          spec: cypress/integration/cucumber-bdd-test/AnnuitiesDetails.feature
-          browser: chrome
-          install: npm install
           build: npm run build
           start: npm start
           
