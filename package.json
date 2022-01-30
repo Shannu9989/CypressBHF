@@ -13,7 +13,7 @@
     }
   },
   "scripts": {
-    "AnnRegtest": "npx cypress run --browser chrome  --headed --spec  cypress\\integration\\cucumber-bdd-test\\AnnuitiesDetails.feature"
+    "ANNREG": "npx cypress run --browser chrome  --headed --spec  cypress\\integration\\cucumber-bdd-test\\AnnuitiesDetails.feature"
   },
   "author": "Subhan",
   "license": "ISC",
