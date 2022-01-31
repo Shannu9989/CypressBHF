@@ -16,7 +16,7 @@ jobs:
           spec: cypress/integration/cucumber-bdd-test/AnnuitiesDetails.feature
 
       - name: Generate report
-        run:  npm run cy:report
+        run: cd cypress && npm run cy:report
       - name: Upload report
         uses: actions/upload-artifact@v2
         with:
