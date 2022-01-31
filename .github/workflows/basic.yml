@@ -16,9 +16,11 @@ jobs:
           spec: cypress/integration/cucumber-bdd-test/AnnuitiesDetails.feature
           record: true
           env:
-          CYPRESS_RECORD_KEY: d2006a51-864a-41d1-8327-08fc15430244
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           # pass GitHub token to allow accurately detecting a build vs a re-run build
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       
          
           
