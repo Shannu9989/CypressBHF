@@ -14,13 +14,12 @@ jobs:
           start: npm start
           browser: chrome
           spec: cypress/integration/cucumber-bdd-test/AnnuitiesDetails.feature
-
-      - name: Generate report
-        run: cd cypress && npm run cy:report
-      - name: Upload report
-        uses: actions/upload-artifact@v2
-        with:
-          name: cypress-cucumber-report
-          path: cypress/cucumber-report/
+          record: true
+          env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          # pass GitHub token to allow accurately detecting a build vs a re-run build
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CYPRESS_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+      
          
           

@@ -4,6 +4,7 @@
     "viewportWidth": 1440,
     "viewportHeight": 920,
     "defaultCommandTimeout":40000,
+    "projectId": "k48i9x",
 
   "env":{
     "SIT2"    :  "https://sit2.bhf.csr-portal.us.insurance.dxc.com/#/" ,
