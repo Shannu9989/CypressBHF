@@ -118,463 +118,733 @@ And('Authorized Role should reflect in Notes label', function()
 })
 
 When('User checks the checkboxes they should reflect in Requested Details and user should be able to close the call', function()
-
 {
-  //Details Tab
-  cy.wait(10000)
-  Details.PolicyNoChkBox();
-  Details.elements.ReqDetTab().contains('DETAILS').should('be.visible')
-  Details.elements.PolicyNo().invoke('text').as('PolN').then((det1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((det2) =>
-     {
-       expect(det2).to.include(det1.trim());
-     })
-  })
-  
-  Details.elements.PolicyNoLabel().invoke('text').as('PolL').then((dt2) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(dt2).should('be.visible')
-  })
-  
-  Details.IssDteChkBox();
-  Details.elements.IssDate().invoke('text').as('IssDN').then((det1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((det2) =>
-     {
-       expect(det2).to.include(det1.trim());
-     })
-  })
-  Details.elements.IssDateLabel().invoke('text').as('IssDL').then((dt2) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(dt2).should('be.visible')
-  })
+      //Details Tab
+      //Explicit Wait
+      cy.wait(10000)
 
-  Details.IssStateChkBox();
-  Details.elements.IssState().invoke('text').as('IssSN').then((det1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((det2) =>
-     {
-       expect(det2).to.include(det1.trim());
-     })
-  })
-  Details.elements.IssStateLabel().invoke('text').as('IssSL').then((dt2) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(dt2).should('be.visible')
-  })
+      //Details Tab Field Validation
+      Details.elements.DetVerPath()
+      .should('contain','Status').and('contain','Restrict Code').and('contain','Suspend Code')
+      .and('contain','Company Code').and('contain','Policy Number').and('contain','Plan Code')
+      .and('contain','Product Name').and('contain','Product Type').and('contain','Issue Date')
+      .and('contain','Tax Market').and('contain','Application Signature Method')
+      .and('contain','Commencement Date').and('contain','Issue State').and('contain','Orginating System')
 
-  //Riders Tab
-  Details.Riders();
-  cy.wait(6000)
-  
-  cy.xpath('//span[text()="Riders"]//following::span[12]').then($el => 
-  {
-    console.log($el.text())
-    if ($el.text() =="This Policy does not have any riders. ")
-     {
-        Details.RidersMsgChkBox();
-        Details.elements.ReqDetTab().contains('RIDERS').should('be.visible')
-        Details.elements.ReqDetFeiVal().contains(' This Policy does not have any riders').should('be.visible')
-     } 
-    else 
-     {
-      Details.AnnRidOneChkBox();
-      Details.elements.ReqDetTab().contains('RIDERS').should('be.visible')
-      Details.elements.AnnRidone().invoke('text').then((rid1) =>
+      //User checks Policy Number Checkbox
+      Details.PolicyNoChkBox();
+
+      //Upon checking the checkbox Details tab name should reflect in Requested Details Tab
+      Details.elements.ReqDetTab().contains('DETAILS').should('be.visible')
+
+      //Upon checking the checkbox Policy Number Label should reflect in Requested Details Tab
+      Details.elements.PolicyNo().invoke('text').as('PolN').then((det1) =>
       {
-        Details.elements.ReqDetFeiName().invoke('text').should((rid2) =>
-        {
-           expect(rid2).to.include(rid1.trim());
-        })
-      })
-      Details.elements.AnnRidoneLabel().invoke('text').as('RidOL').then((rid1) =>
-      {
-        Details.elements.ReqDetFeiVal().contains(rid1).should('be.visible')
+        Details.elements.ReqDetFeiName().invoke('text').should((det2) =>
+         {
+           expect(det2).to.include(det1.trim());
+         })
       })
       
-
-      cy.xpath('//span[text()="Riders"]//following::span[@class="rd-checkbox-label"][2]').then($rid =>
+      //Upon checking the checkbox Policy Number should reflect in Requested Details Tab
+      Details.elements.PolicyNoLabel().invoke('text').as('PolL').then((dt2) =>
       {
-        if($rid.text() == "Death Benefit Option:")
-        {
-          Details.AnnRidTwoChkBox();
-          Details.elements.AnnRidTwo().invoke('text').then((rid1) =>
+        Details.elements.ReqDetFeiVal().contains(dt2).should('be.visible')
+      })
+      
+      //User checks Issue Date checkbox
+      Details.IssDteChkBox();
+
+      //Upon checking the checkbox Issue Date Label should reflect in Requested Details Tab
+      Details.elements.IssDate().invoke('text').as('IssDN').then((det1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((det2) =>
+         {
+           expect(det2).to.include(det1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Issue Date should reflect in Requested Details Tab
+      Details.elements.IssDateLabel().invoke('text').as('IssDL').then((dt2) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(dt2).should('be.visible')
+      })
+
+      //User checks Issue State checkbox
+      Details.IssStateChkBox();
+
+      //Upon checking the checkbox Issue State Label should reflect in Requested Details Tab
+      Details.elements.IssState().invoke('text').as('IssSN').then((det1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((det2) =>
+         {
+           expect(det2).to.include(det1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Issue State should reflect in Requested Details Tab
+      Details.elements.IssStateLabel().invoke('text').as('IssSL').then((dt2) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(dt2).should('be.visible')
+      })
+
+      //Riders Tab
+      //User clicks on Riders Tab
+      Details.Riders();
+
+      //Explicit Wait
+      cy.wait(6000)
+      
+      Details.elements.RiderScreen().then($el => 
+      {
+        console.log($el.text())
+        if ($el.text() =="This Policy does not have any riders. ")
+         {
+           //User clicks on Message checkbox
+            Details.RidersMsgChkBox();
+
+            //Upon checking the checkbox Riders tab name should reflect in Requested Details Tab
+            Details.elements.ReqDetTab().contains('RIDERS').should('be.visible')
+
+            //Upon checking the checkbox Message should reflect in Requested Details Tab
+            Details.elements.ReqDetFeiVal().contains(' This Policy does not have any riders').should('be.visible')
+         } 
+        else 
+         {
+           //Riders Tab Field Validation
+           Details.elements.RidVerPath().then(($body) =>
+           {
+             if($body.text().includes('General Rider Information')) 
+             {
+               Details.elements.RidVerPath().should('contain','Death Benefit Indicator')
+               .and('contain','Death Benefit Option').and('contain','Death Benefit Value')
+             }
+           })
+
+          //User checks Rider Tab 1st field checkbox 
+          Details.AnnRidOneChkBox();
+
+          //Upon checking the checkbox Riders tab name should reflect in Requested Details Tab
+          Details.elements.ReqDetTab().contains('RIDERS').should('be.visible')
+
+          //Upon checking the checkbox Rider Tab 1st field Label should reflect in Requested Details Tab
+          Details.elements.AnnRidone().invoke('text').then((rid1) =>
+          {
+            Details.elements.ReqDetFeiName().invoke('text').should((rid2) =>
+            {
+               expect(rid2).to.include(rid1.trim());
+            })
+          })
+
+          //Upon checking the checkbox Rider Tab 1st field Value should reflect in Requested Details Tab
+          Details.elements.AnnRidoneLabel().invoke('text').as('RidOL').then((rid1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(rid1).should('be.visible')
+          })
+          
+
+         Details.elements.RidDBLabel().then($rid =>
+          {
+            if($rid.text() == "Death Benefit Option:")
+            {
+              //User checks Rider Tab 2nd field checkbox 
+              Details.AnnRidTwoChkBox();
+
+              //Upon checking the checkbox Rider Tab 2nd field Label should reflect in Requested Details Tab 
+              Details.elements.AnnRidTwo().invoke('text').then((rid1) =>
+              {
+                Details.elements.ReqDetFeiName().invoke('text').should((rid2) =>
+                {
+                  expect(rid2).to.include(rid1.trim());
+                })
+              })
+
+              //Upon checking the checkbox Rider Tab 2nd field Value should reflect in Requested Details Tab
+              Details.elements.Ridsecval().invoke('text').as('DBRL').then((rid1) =>
+              {
+                Details.elements.ReqDetFeiVal().contains(rid1).should('be.visible')
+              })
+            }
+            else
+            {
+              //User checks Rider Tab 2nd field checkbox 
+              Details.AnnRidTwoChkBox();
+
+              //Upon checking the checkbox Rider Tab 2nd field Label should reflect in Requested Details Tab
+              Details.elements.AnnRidTwo().invoke('text').then((rid1) =>
+              {
+                Details.elements.ReqDetFeiName().invoke('text').should((rid2) =>
+                {
+                  expect(rid2).to.include(rid1.trim());
+                })
+              })
+
+              //Upon checking the checkbox Rider Tab 2nd field Value should reflect in Requested Details Tab
+              Details.elements.Ridsecsecval().invoke('text').as('LRL').then((rid1) =>
+              {
+                Details.elements.ReqDetFeiVal().contains(rid1).should('be.visible')
+              })
+            }
+          })
+
+          //User checks Rider Tab 3rd field checkbox 
+          Details.AnnRidThreeChkBox();
+
+          //Upon checking the checkbox Rider Tab 3rd field Label should reflect in Requested Details Tab
+          Details.elements.AnnRidThree().invoke('text').then((rid1) =>
           {
             Details.elements.ReqDetFeiName().invoke('text').should((rid2) =>
             {
               expect(rid2).to.include(rid1.trim());
             })
           })
-          cy.xpath('//span[@class="pad-lAr0px p-l-34px textWrap ng-star-inserted"][1]').invoke('text').as('DBRL').then((rid1) =>
+
+          //Upon checking the checkbox Rider Tab 3rd field Value should reflect in Requested Details Tab
+          Details.elements.AnnRidThreeLabel().invoke('text').as('RidTHL').then((rid1) =>
           {
             Details.elements.ReqDetFeiVal().contains(rid1).should('be.visible')
           })
+         }    
+      })
+
+      //Billing Tab:
+      //User clicks on Biling tab
+      Details.Billing();
+
+      //Explicit Wait
+      cy.wait(5000)
+
+      //Billing Tab Data Validation 
+      Details.elements.BillVerPath().should('contain','Paid To Date').and('contain','Billing Method')
+      .and('contain','List Bill #').and('contain','Billing Frequency').and('contain','Billing Amount')
+      .and('contain','Total Premium Paid').and('contain','Annual Premium')
+
+      //User clicks on Billing Option Checkbox
+      Details.BillOptChkBox();
+
+      //Upon checking the checkbox Billing tab name should reflect in Requested Details Tab
+      Details.elements.ReqDetTab().contains('BILLING').should('be.visible')
+
+      //Upon checking the checkbox Billing Option Label should reflect in Requested Details Tab
+      Details.elements.BillOpt().invoke('text').as('BiON').then((bil1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((bil2) =>
+         {
+           expect(bil2).to.include(bil1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Billing Option should reflect in Requested Details Tab
+      Details.elements.BillOptLabel().invoke('text').as('BiOL').then((bil1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(bil1).should('be.visible')
+      })
+
+      //User clicks on Billig Amount Checkbox
+      Details.BillAmtChkBox();
+
+      //Upon checking the checkbox Billing Amount Label should reflect in Requested Details Tab
+      Details.elements.BillAmt().invoke('text').as('BiAmN').then((bil1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((bil2) =>
+         {
+           expect(bil2).to.include(bil1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Billing Amount should reflect in Requested Details Tab
+      Details.elements.BillAmtLabel().invoke('text').as('BiAmL').then((bil1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(bil1).should('be.visible')
+      })
+
+      //User clicks on Total Premium CheckBox 
+      Details.TotalPrmChkBox();
+
+      //Upon checking the checkbox Total Premium Label should reflect in Requested Details Tab
+      Details.elements.TotalPrm().invoke('text').as('TotPN').then((bil1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((bil2) =>
+         {
+           expect(bil2).to.include(bil1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Total Premium should reflect in Requested Details Tab
+      Details.elements.TotalPrmLabel().invoke('text').as('TotPL').then((bil1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(bil1).should('be.visible')
+      })
+        
+      //Values Tab:
+      //User clicks on Values Tab
+      Details.Values()
+
+      //Explicit Wait
+      cy.wait(5000)
+
+      //Values Tab Field Validation
+      Details.elements.ValuesVerPath().should('contain','Message').and('contain','Accumulated Cash Value')
+      .and('contain','Cash Surrender Value').and('contain','Surrender Charge').and('contain','Free Out Amount')
+      .and('contain','Max Gross Partial Surrender Amount').and('contain','Max Net Partial Surrender Amount')
+      .and('contain','Withdrawal Charge Period').and('contain','Admin Fee').and('contain','GMIB Fee Amount')
+      .and('contain','EDB Fee Amount').and('contain','GWB/LWG Fee Amount').and('contain','ODB Fee Amount')
+      .and('contain','GMAB Fee Amount').and('contain','Cost-Basis Pre TEFRA Amount').and('contain','Cost-Basis Post TEFRA Amount')
+      .and('contain','Total MVA Amount').and('contain','FAV Code')
+
+      //User clicks on Accumalated CashValue Checkbox
+      Details.AcccashChkBox();
+
+      //Upon checking the checkbox Values tab name should reflect in Requested Details Tab
+      Details.elements.ReqDetTab().contains('VALUES').should('be.visible')
+
+      //Upon checking the checkbox Effective Date Label should reflect in Requested Details Tab
+      Details.elements.ReqDetFeiName().should('contain','Effective Date:')
+
+      //Upon checking the checkbox Effective Date should reflect in Requested Details Tab
+      Details.elements.Valeffdt().invoke('val').as('eff1').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //Upon checking the checkbox Accumalated CashValue Label should reflect in Requested Details Tab
+      Details.elements.AcccashVal().invoke('text').as('AccN1').then((val1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
+         {
+           expect(val2).to.include(val1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Accumalated CashValue should reflect in Requested Details Tab
+      Details.elements.AcccashValLabel().invoke('text').as('AccL1').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //User clicks on Net Cash Surrender Value Checkbox
+      Details.NetCashSurrChkBox();
+
+      //Upon checking the checkbox Net Cash Surrender Value Label should reflect in Requested Details Tab
+      Details.elements.NetCashSurr().invoke('text').as('NetN1').then((val1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
+         {
+           expect(val2).to.include(val1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Net Cash Surrender Value should reflect in Requested Details Tab
+      Details.elements.NetCashSurrLab().invoke('text').as('NetL1').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //User clicks on Freeout Amount Checkbox
+      Details.FreeOutAmtChkBox();
+
+      //Upon checking the checkbox Freoeut Amount Label should reflect in Requested Details Tab
+      Details.elements.FreeOutAmt().invoke('text').as('FOAN1').then((val1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
+         {
+           expect(val2).to.include(val1.trim());
+         })
+      })
+
+      //Upon checking the checkbox Freeout Amount should reflect in Requested Details Tab
+      Details.elements.FreeOutAmtLab().invoke('text').as('FOAL1').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //User clicks on Calender Icon
+      Details.CallIcon()
+
+      //User clicks on Month and Year Button
+      Details.ChooseMnYr()
+
+      //User selects year
+      Details.elements.CalBody().each(($el)=>
+      {
+          var Year =$el.text()
+          if(Year=='2021')
+          {
+            cy.wrap($el).click({force: true})
+          }
+      })
+
+      //User selects month 
+      Details.elements.CalBody().each(($el)=>
+      {
+          var Month =$el.text()
+          if(Month=='DEC')
+          {
+            cy.wrap($el).click({force: true})
+          }
+      })
+
+      //User selects Date
+      Details.elements.CalBody().each(($el)=>
+      {
+          var Date =$el.text()
+          if(Date=='15')
+          {
+            cy.wrap($el).click({force: true})
+          }
+      })
+
+      //User clicks on Quote Button
+      Details.ButtonQuote()
+
+      //Explicit Wait
+      cy.wait(15000)
+
+      //After Quoting User clicks on Accumalated CashValue Checkbox
+      Details.AcccashChkBox();
+
+      //After Quoting Upon checking the checkbox Effective Date Label should reflect in Requested Details Tab
+      Details.elements.ReqDetFeiName().should('contain','Effective Date:')
+
+      //After Quoting Upon checking the checkbox Effective Date should reflect in Requested Details Tab
+      Details.elements.Valeffdt().invoke('val').as('eff2').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //After Quoting Upon checking the checkbox Accumalated CashValue Label should reflect in Requested Details Tab
+      Details.elements.AcccashVal().invoke('text').as('AccN2').then((val1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
+         {
+           expect(val2).to.include(val1.trim());
+         })
+      })
+
+      //After Quoting Upon checking the checkbox Accumalated CashValue should reflect in Requested Details Tab
+      Details.elements.AcccashValLabel().invoke('text').as('AccL2').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //After Quoting User clicks on Net Cash Surrender Value Checkbox
+      Details.NetCashSurrChkBox();
+
+      //After Quoting Upon checking the checkbox Net Cash Surrender Value Label should reflect in Requested Details Tab
+      Details.elements.NetCashSurr().invoke('text').as('NetN2').then((val1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
+         {
+           expect(val2).to.include(val1.trim());
+         })
+      })
+
+      //After Quoting Upon checking the checkbox Net Cash Surrender Value should reflect in Requested Details Tab
+      Details.elements.NetCashSurrLab().invoke('text').as('NetL2').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //After Quoting User clicks on Freeout Amount Checkbox
+      Details.FreeOutAmtChkBox();
+
+      //After Quoting Upon checking the checkbox Freeout Amount Label should reflect in Requested Details Tab
+      Details.elements.FreeOutAmt().invoke('text').as('FOAN2').then((val1) =>
+      {
+        Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
+         {
+           expect(val2).to.include(val1.trim());
+         })
+      })
+
+      //After Quoting Upon checking the checkbox Freeout Amount should reflect in Requested Details Tab
+      Details.elements.FreeOutAmtLab().invoke('text').as('FOAL2').then((val1) =>
+      {
+        Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
+      })
+
+      //LoansTab:
+      //User clicks on Loans Tab
+      Details.Loans();
+
+      //Explicit Wait
+      cy.wait(5000)
+
+      //User clicks on Loans Checkbox 
+      Details.NoLoanChkBox();
+
+      //Upon checking the checkbox Loan Label should reflect in Requested Details Tab
+      Details.elements.LoanReqDet().contains('LOAN').should('be.visible')
+
+      //Upon checking the checkbox Message should reflect in Requested Details Tab
+      Details.elements.ReqDtAnnLoanMsg().contains('Loans not applicable for this product').should('be.visible')
+      
+      //Funds Tab:
+      //User clicks on Funds Tab
+      Details.Funds();
+
+      //Explicit Wait
+      cy.wait(9000)
+
+      //Funds Tab Field Validation
+      Details.elements.FundsVerPath().then(($body) =>
+      {
+        if($body.text().includes('Shield')) 
+        {
+          Details.elements.FundsVerPath().should('contain','Name')
+          .and('contain','Number').and('contain','Future Allocation').and('contain','Fund Value')
+          .and('contain','% Of Total Contract').and('contain','Start Date').and('contain','Renewal Date')
+          .and('contain','Original Deposit Amount').and('contain','Cap Rate').and('contain','Term Value')
+          .and('contain','Accrued Cap Rate').and('contain','Accrued Shield Rate').and('contain','Investment Amount')
         }
         else
         {
-          Details.AnnRidTwoChkBox();
-          Details.elements.AnnRidTwo().invoke('text').then((rid1) =>
-          {
-            Details.elements.ReqDetFeiName().invoke('text').should((rid2) =>
-            {
-              expect(rid2).to.include(rid1.trim());
-            })
-          })
-          cy.xpath('//span[text()="Riders"]//following::span[@class=" pad-lAr0px p-l-34px textWrap"][1]').invoke('text').as('LRL').then((rid1) =>
-          {
-            Details.elements.ReqDetFeiVal().contains(rid1).should('be.visible')
-          })
+          Details.elements.FundsVerPath().should('contain','Name')
+          .and('contain','Number').and('contain','Future Allocation').and('contain','Fund Value')
+          .and('contain','% Of Total Contract').and('contain','Type').and('contain','Unit Value')
+          .and('contain','Total Units').and('contain','Interest Rate')
         }
       })
+     
 
-      Details.AnnRidThreeChkBox();
-      Details.elements.AnnRidThree().invoke('text').then((rid1) =>
+      //User clicks on Fund Number Checkbox
+      Details.AnnFundNoChkBox();
+
+      //Upon checking the checkbox Funds tab name should reflect in Requested Details Tab
+      Details.elements.ReqDetTab().contains('FUNDS').should('be.visible'); 
+
+      //Upon checking the checkbox Fund Name Label should reflect in Requested Details Tab
+      Details.elements.ReqDetFeiName().contains('Name:').should('be.visible');
+
+      //Upon checking the checkbox Fund Nmber Label should reflect in Requested Details Tab
+      Details.elements.ReqDetFeiName().contains('Number:').should('be.visible');
+
+      //Upon checking the checkbox Fund Number should reflect in Requested Details Tab
+      Details.elements.Annlabelone().invoke('text').as('FundOL').then((fun1) =>
       {
-        Details.elements.ReqDetFeiName().invoke('text').should((rid2) =>
+        Details.elements.ReqDetFeiVal().invoke('text').should((fun2) =>
+         {
+           expect(fun2.trim()).to.include(fun1);
+         })
+      })
+
+      //User clicks on 3rd field of Funds Tab Checkbox 
+      Details.AnnSecFieldChkBox()
+
+      //Upon checking the checkbox 3rd field Label of Funds Tab should reflect in Requested Details Tab
+      Details.elements.ReqDetFeiName().should(($el) =>
+      {
+        const tex = $el.text()
+        const hastxt = tex.includes('Future Allocation:')
+        const hadtxt = tex.includes('Type:')
+        expect(hastxt || hadtxt,'ele has either of the txt').to.be.true
+      })
+
+      //Upon checking the checkbox 3rd field value of Funds Tab should reflect in Requested Details Tab
+      Details.elements.Annlabeltwo().invoke('text').as('FundTL').then((fun1) =>
+      {
+        Details.elements.ReqDetFeiVal().invoke('text').should((fun2) =>
+         {
+           expect(fun2.trim()).to.include(fun1);
+         })
+      })
+
+      //user clicks on 5th field checkbox of Funds Tab 
+      Details.AnnThirdfieldChkBox(); 
+
+      //Upon checking the checkbox 5th field Label of Funds Tab should reflect in Requested Details Tab
+      Details.elements.ReqDetFeiName().should(($el) =>
+      {
+        const tex = $el.text()
+        const hastxt = tex.includes('Total Contract Value:')
+        const hadtxt = tex.includes('Unit Value:')
+        expect(hastxt || hadtxt,'ele has either of the txt').to.be.true
+      })
+
+      //Upon checking the checkbox 5th field Value of Funds Tab should reflect in Requested Details Tab
+      Details.elements.Annlabelthree().invoke('text').as('FundThL').then((fun1) =>
+      {
+        Details.elements.ReqDetFeiVal().invoke('text').should((fun2) =>
+         {
+           expect(fun2.trim()).to.include(fun1);
+         })
+      })
+
+      //Suspense Tab:
+      //User clicks on Suspense tab
+      Details.Suspense();
+
+      //Explicit Wait
+      cy.wait(6000);
+
+      Details.elements.Suspscreen().then($el =>
+      {
+        console.log($el.text());
+        if ($el.text() == ' No records found.') 
         {
-          expect(rid2).to.include(rid1.trim());
-        })
-      })
-      Details.elements.AnnRidThreeLabel().invoke('text').as('RidTHL').then((rid1) =>
+          //User clicks on Revolving Error Tab
+          Details.Revolving();
+        } 
+        else
+        {
+          //User clicks on 1st field checkbox in Suspense Tab
+          Details.SuspenseChkBox();
+
+          //Upon checking on the checkbox Suspense Tab name should reflect in Requested Details Tab
+          Details.elements.ReqDetTab().contains('Suspense').should('be.visible')
+
+          //Upon checking on the checkbox Amount Label should reflect in Requested Details Tab
+          Details.elements.ReqDetFeiName().should('contain','Amount:')
+
+          //Upon checking on the checkbox Amount should reflect in Requested Details Tab
+          Details.elements.SusAmtLabel().invoke('text').as('suspenseAmt').then((sus1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(sus1).should('be.visible')
+          })
+
+          //Upon checking on the checkbox Effective Date Label should reflect in Requested Details Tab
+          Details.elements.ReqDetFeiName().should('contain','Effective Date:')
+
+          //Upon checking on the checkbox Effective Date should reflect in Requested Details Tab
+          Details.elements.SusEffDatLabel().invoke('text').as('SusEffectiveDate').then((sus1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(sus1).should('be.visible')
+          })
+
+          //User clicks on Revolving Error Tab
+          Details.Revolving();
+        }    
+       })
+
+      // Revolving Error:
+      //Explicit Wait
+      cy.wait(6000);
+
+      Details.elements.RevErrScreen().then($el => 
       {
-        Details.elements.ReqDetFeiVal().contains(rid1).should('be.visible')
-      })
+        console.log($el.text());
+        if ($el.text() == ' No records found.')
+        {
+          //User clicks on Notes Tab
+          Details.Notes();
+        } 
+        else
+        {
+          //User clicks on 1st field checkbox of Revolving Error Tab
+          Details.RevolvChkBox();
 
-      
-     }    
-  })
+          //Upon checking on the checkbox Revolving Error Tab name should reflect in Requested Details Tab
+          Details.elements.ReqDetTab().contains('Revolving Error').should('be.visible')
 
-  //Billing Tab:
-  Details.Billing();
-  cy.wait(5000)
-  Details.BillOptChkBox();
-  Details.elements.ReqDetTab().contains('BILLING').should('be.visible')
-  Details.elements.BillOpt().invoke('text').as('BiON').then((bil1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((bil2) =>
-     {
-       expect(bil2).to.include(bil1.trim());
-     })
-  })
-  Details.elements.BillOptLabel().invoke('text').as('BiOL').then((bil1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(bil1).should('be.visible')
-  })
+          //Upon checking on the checkbox Type Label should reflect in Requested Details Tab
+          Details.elements.ReqDetFeiName().should('contain','Type:')
 
-  Details.BillAmtChkBox();
-  Details.elements.BillAmt().invoke('text').as('BiAmN').then((bil1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((bil2) =>
-     {
-       expect(bil2).to.include(bil1.trim());
-     })
-  })
-  Details.elements.BillAmtLabel().invoke('text').as('BiAmL').then((bil1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(bil1).should('be.visible')
-  })
+          //Upon checking on the checkbox Type should reflect in Requested Details Tab
+          Details.elements.RevolTypeLabel().invoke('text').as('RevTy').then((rev1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(rev1).should('be.visible')
+          })
 
-  Details.TotalPrmChkBox();
-  Details.elements.TotalPrm().invoke('text').as('TotPN').then((bil1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((bil2) =>
-     {
-       expect(bil2).to.include(bil1.trim());
-     })
-  })
-  Details.elements.TotalPrmLabel().invoke('text').as('TotPL').then((bil1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(bil1).should('be.visible')
-  })
-    
-  //Values Tab:
-  Details.Values()
-  cy.wait(5000)
-  Details.AcccashChkBox();
-  Details.elements.ReqDetTab().contains('VALUES').should('be.visible')
-  Details.elements.ReqDetFeiName().should('contain','Effective Date:')
-  Details.elements.Valeffdt().invoke('val').as('eff1').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
-  Details.elements.AcccashVal().invoke('text').as('AccN1').then((val1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
-     {
-       expect(val2).to.include(val1.trim());
-     })
-  })
-  Details.elements.AcccashValLabel().invoke('text').as('AccL1').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
+          //Upon checking on the checkbox Effective Date Label should reflect in Requested Details Tab
+          Details.elements.ReqDetFeiName().should('contain','Effective Date:')
 
-  Details.NetCashSurrChkBox();
-  Details.elements.NetCashSurr().invoke('text').as('NetN1').then((val1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
-     {
-       expect(val2).to.include(val1.trim());
-     })
-  })
-  Details.elements.NetCashSurrLab().invoke('text').as('NetL1').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
+          //Upon checking on the checkbox Effective Date should reflect in Requested Details Tab
+          Details.elements.RevolEffDtLabel().invoke('text').as('RevEff').then((rev1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(rev1).should('be.visible')
+          })
 
-  Details.FreeOutAmtChkBox();
-  Details.elements.FreeOutAmt().invoke('text').as('FOAN1').then((val1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
-     {
-       expect(val2).to.include(val1.trim());
-     })
-  })
-  Details.elements.FreeOutAmtLab().invoke('text').as('FOAL1').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
+          //Upon checking on the checkbox Amount Label should reflect in Requested Details Tab
+          Details.elements.ReqDetFeiName().should('contain','Amount:')
 
-  cy.get('#policy-values-quote-effective-date-date_toggleDate .mat-icon-button').click({force: true})
-  cy.get('[aria-label="Choose month and year"]').click({force: true})
-  cy.get('.mat-calendar-body-cell-content').each(($el)=>
-  {
-      var Year =$el.text()
-      if(Year=='2021')
-      {
-        cy.wrap($el).click({force: true})
-      }
-  })
-  cy.get('.mat-calendar-body-cell-content').each(($el)=>
-  {
-      var Month =$el.text()
-      if(Month=='DEC')
-      {
-        cy.wrap($el).click({force: true})
-      }
-  })
-  cy.get('.mat-calendar-body-cell-content').each(($el)=>
-  {
-      var Date =$el.text()
-      if(Date=='15')
-      {
-        cy.wrap($el).click({force: true})
-      }
-  })
+          //Upon checking on the checkbox Amount should reflect in Requested Details Tab
+          Details.elements.RevolAmtLabel().invoke('text').as('RevAmt').then((rev1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(rev1).should('be.visible')
+          })
 
-  Details.ButtonQuote()
-  cy.wait(15000)
-  Details.AcccashChkBox();
-  Details.elements.ReqDetTab().contains('VALUES').should('be.visible')
-  Details.elements.ReqDetFeiName().should('contain','Effective Date:')
-  Details.elements.Valeffdt().invoke('val').as('eff2').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
-  Details.elements.AcccashVal().invoke('text').as('AccN2').then((val1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
-     {
-       expect(val2).to.include(val1.trim());
-     })
-  })
-  Details.elements.AcccashValLabel().invoke('text').as('AccL2').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
-
-  Details.NetCashSurrChkBox();
-  Details.elements.NetCashSurr().invoke('text').as('NetN2').then((val1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
-     {
-       expect(val2).to.include(val1.trim());
-     })
-  })
-  Details.elements.NetCashSurrLab().invoke('text').as('NetL2').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
-
-  Details.FreeOutAmtChkBox();
-  Details.elements.FreeOutAmt().invoke('text').as('FOAN2').then((val1) =>
-  {
-    Details.elements.ReqDetFeiName().invoke('text').should((val2) =>
-     {
-       expect(val2).to.include(val1.trim());
-     })
-  })
-  Details.elements.FreeOutAmtLab().invoke('text').as('FOAL2').then((val1) =>
-  {
-    Details.elements.ReqDetFeiVal().contains(val1).should('be.visible')
-  })
-
-  //LoansTab:
-  Details.Loans();
-  cy.wait(5000)
-  Details.NoLoanChkBox();
-  Details.elements.ReqDtAnnLoanMsg().contains('Loans not applicable for this product').should('be.visible')
-  
-
-
-  //Funds Tab:
-  Details.Funds();
-  cy.wait(9000)
-  Details.AnnFundNoChkBox();
-  Details.elements.ReqDetTab().contains('FUNDS').should('be.visible'); 
-  Details.elements.ReqDetFeiName().contains('Name:').should('be.visible');
-  Details.elements.ReqDetFeiName().contains('Number:').should('be.visible');
-  Details.elements.Annlabelone().invoke('text').as('FundOL').then((fun1) =>
-  {
-    Details.elements.ReqDetFeiVal().invoke('text').should((fun2) =>
-     {
-       expect(fun2.trim()).to.include(fun1);
-     })
-  })
-  Details.AnnSecFieldChkBox()
-  Details.elements.ReqDetFeiName().should(($el) =>
-  {
-    const tex = $el.text()
-    const hastxt = tex.includes('Future Allocation:')
-    const hadtxt = tex.includes('Type:')
-    expect(hastxt || hadtxt,'ele has either of the txt').to.be.true
-  })
-  Details.elements.Annlabeltwo().invoke('text').as('FundTL').then((fun1) =>
-  {
-    Details.elements.ReqDetFeiVal().invoke('text').should((fun2) =>
-     {
-       expect(fun2.trim()).to.include(fun1);
-     })
-  })
-  Details.AnnThirdfieldChkBox(); 
-  Details.elements.ReqDetFeiName().should(($el) =>
-  {
-    const tex = $el.text()
-    const hastxt = tex.includes('Total Contract Value:')
-    const hadtxt = tex.includes('Unit Value:')
-    expect(hastxt || hadtxt,'ele has either of the txt').to.be.true
-  })
-  Details.elements.Annlabelthree().invoke('text').as('FundThL').then((fun1) =>
-  {
-    Details.elements.ReqDetFeiVal().invoke('text').should((fun2) =>
-     {
-       expect(fun2.trim()).to.include(fun1);
-     })
-  })
-
-  //Suspense Tab:
-  Details.Suspense();
-  cy.wait(6000);
-  cy.xpath('//span[text()="Suspense"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]').then($el =>
-  {
-    console.log($el.text());
-    if ($el.text() == ' No records found.') 
-    {
-      Details.Revolving();
-    } 
-    else
-    {
-      Details.SuspenseChkBox();
-      Details.elements.ReqDetTab().contains('Suspense').should('be.visible')
-      Details.elements.ReqDetFeiName().should('contain','Amount:')
-      Details.elements.SusAmtLabel().invoke('text').as('suspenseAmt').then((sus1) =>
-      {
-        Details.elements.ReqDetFeiVal().contains(sus1).should('be.visible')
-      })
-      Details.elements.ReqDetFeiName().should('contain','Effective Date:')
-      Details.elements.SusEffDatLabel().invoke('text').as('SusEffectiveDate').then((sus1) =>
-      {
-        Details.elements.ReqDetFeiVal().contains(sus1).should('be.visible')
-      })
-      Details.Revolving();
-    }    
-   })
-
-  // Revolving Error:
-  cy.wait(6000);
-  cy.xpath('//span[text()="Revolving Error"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]').then($el => 
-  {
-    console.log($el.text());
-    if ($el.text() == ' No records found.')
-    {
-      Details.Notes();
-    } 
-    else
-    {
-      Details.RevolvChkBox();
-      Details.elements.ReqDetTab().contains('Revolving Error').should('be.visible')
-      Details.elements.ReqDetFeiName().should('contain','Type:')
-      Details.elements.RevolTypeLabel().invoke('text').as('RevTy').then((rev1) =>
-      {
-        Details.elements.ReqDetFeiVal().contains(rev1).should('be.visible')
-      })
-      Details.elements.ReqDetFeiName().should('contain','Effective Date:')
-      Details.elements.RevolEffDtLabel().invoke('text').as('RevEff').then((rev1) =>
-      {
-        Details.elements.ReqDetFeiVal().contains(rev1).should('be.visible')
-      })
-      Details.elements.ReqDetFeiName().should('contain','Amount:')
-      Details.elements.RevolAmtLabel().invoke('text').as('RevAmt').then((rev1) =>
-      {
-        Details.elements.ReqDetFeiVal().contains(rev1).should('be.visible')
-      })
-      Details.Notes();
-    }    
-  })
-
-  //Notes:
-  cy.wait(6000);
-  cy.xpath('//span[text()="Notes"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]').then($el => 
-  {
-    console.log($el.text());
-    if ($el.text() == ' No records found.') 
-    {
-      Details.PendingTran();
-    } 
-    else
-    {
-      Details.NotesTypeChkBox();
-      Details.elements.ReqDetTab().contains('NOTES').should('be.visible')
-      Details.elements.NotesType().invoke('text').as('NotN').then((not1) =>
-      {
-        Details.elements.ReqDetFeiName().invoke('text').should((not2) =>
-        { 
-           expect(not2).to.include(not1.trim());
-        })
-      })
-      Details.elements.NotesTypeLabel().invoke('text').as('NotL').then((not1) =>
-      {
-        Details.elements.ReqDetFeiVal().contains(not1).should('be.visible')
+          //User clicks on Notes Tab
+          Details.Notes();
+        }    
       })
 
-      Details.NotesTypeNoChkBox()
-      Details.elements.NotesTypeNo().invoke('text').as('NotTyN').then((not1) =>
+      //Notes:
+      //Explicit Wait
+      cy.wait(6000);
+
+      Details.elements.NotesScreen().then($el => 
       {
-        Details.elements.ReqDetFeiName().invoke('text').should((not2) =>
-        { 
-           expect(not2).to.include(not1.trim());
-        })
+        console.log($el.text());
+        if ($el.text() == ' No records found.') 
+        {
+          //User clicks on Pending Transaction Tab
+          Details.PendingTran();
+        } 
+        else
+        {
+          //Notes Tab Field Validation
+          Details.elements.NotesVerPath().should('contain','Message').and('contain','Operator ID')
+          .and('contain','Note Type').and('contain','Type Number').and('contain','Date')
+
+          //User clicks on Notes Type checkbox
+          Details.NotesTypeChkBox();
+
+          //Upon checking on the checkbox Notes Tab name should reflect in Requested Details Tab
+          Details.elements.ReqDetTab().contains('NOTES').should('be.visible')
+
+          //Upon checking on the checkbox Type Label should reflect in Requested Details Tab
+          Details.elements.NotesType().invoke('text').as('NotN').then((not1) =>
+          {
+            Details.elements.ReqDetFeiName().invoke('text').should((not2) =>
+            { 
+               expect(not2).to.include(not1.trim());
+            })
+          })
+
+          //Upon checking on the checkbox Type should reflect in Requested Details Tab
+          Details.elements.NotesTypeLabel().invoke('text').as('NotL').then((not1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(not1).should('be.visible')
+          })
+
+          //User clicks on Notes Type Number Checkbox 
+          Details.NotesTypeNoChkBox()
+
+          //Upon checking on the checkbox Number Label should reflect in Requested Details Tab
+          Details.elements.NotesTypeNo().invoke('text').as('NotTyN').then((not1) =>
+          {
+            Details.elements.ReqDetFeiName().invoke('text').should((not2) =>
+            { 
+               expect(not2).to.include(not1.trim());
+            })
+          })
+
+          //Upon checking on the checkbox Number should reflect in Requested Details Tab
+          Details.elements.NotesTypeNoLabel().invoke('text').as('NotTyL').then((not1) =>
+          {
+            Details.elements.ReqDetFeiVal().contains(not1).should('be.visible')
+          })
+
+          //User clicks on Pending Transactions Tab
+          Details.PendingTran();
+        }    
       })
-      Details.elements.NotesTypeNoLabel().invoke('text').as('NotTyL').then((not1) =>
+
+      //Pending Transaction
+      //Explicit Wait
+      cy.wait(6000);
+
+      Details.elements.PenTransScreen().should(($el) =>
       {
-        Details.elements.ReqDetFeiVal().contains(not1).should('be.visible')
+        //Pending Transaction tab should have either of the text below mentioned.
+        const tex = $el.text()
+        const hastxt = tex.includes(' No records found.')
+        const hadtxt = tex.includes(' User ID ')
+        expect(hastxt || hadtxt,'ele has either of the txt').to.be.true
       })
-      Details.PendingTran();
-    }    
-  })
-
-
-  //Pending Transaction
-  cy.wait(6000);
-  cy.xpath('//span[text()="Pending Transactions"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]').should(($el) =>
-  {
-    const tex = $el.text()
-    const hastxt = tex.includes(' No records found.')
-    const hadtxt = tex.includes(' User ID ')
-    expect(hastxt || hadtxt,'ele has either of the txt').to.be.true
-  })
-
-  cy.CloseCall(this.data.wrPHNUM)
+   
+      //User closes the call
+      cy.CloseCall(this.data.wrPHNUM)
 })
 
 Then('User should see the time in My Call History Widget', function()
@@ -585,7 +855,7 @@ Then('User should see the time in My Call History Widget', function()
   Details.elements.MyCallDate().should('contain',NewYorkTimezone)
 })
 
-And('User should see the authorized policy in My Call History Widget', function()
+Then('User should see the authorized policy in My Call History Widget', function()
 {
   Details.elements.MyCallPolicy().should('contain',this.data.policy)
 })

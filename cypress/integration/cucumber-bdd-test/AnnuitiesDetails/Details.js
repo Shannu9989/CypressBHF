@@ -22,14 +22,16 @@ class Details
         AutLabRole:       () => cy.get('#authorize-sucess-role-label'),
         NotesLabel:       () => cy.get('#close-call-notes-textarea_'),
 
-
         //DetailsTab
+        DetailTab:        () => cy.xpath('//span[text()="Details"]'),
         PolicyNo:         () => cy.get("#policy-details-policy-number-action-checkbox_label"),   
         PolicyNoLabel:    () => cy.get("#policy-details-policy-number-label"),
         IssDate:          () => cy.get("#policy-details-issue-date-action-checkbox_label"),
         IssDateLabel:     () => cy.get("#policy-details-effective-date-label"),
         IssState:         () => cy.get("#policy-details-issue-state-desc-action-checkbox_label"),
         IssStateLabel:    () => cy.get('#policy-details-issue-state-desc-label'),
+        DetVerPath:       () => cy.xpath('//span[text()="Details"]//following::mat-card-content[2]'),
+        ProdNameLab:      () => cy.get('#policy-details-product-name-label'),
 
         //RidersTab
         RidersTab:        () => cy.xpath('//span[text()="Riders"]'),
@@ -45,6 +47,13 @@ class Details
         AnnRidTwo:        () => cy.xpath('//span[text()="Riders"]//following::input[1]//following::span[5]'),
         AnnRidThree:      () => cy.xpath('//span[text()="Riders"]//following::input[1]//following::span[9]'),
         AnnRidThreeLabel: () => cy.xpath('//span[text()="Riders"]//following::span[@class=" pad-lAr0px p-l-34px textWrap"][1]'),
+        RidVerPath:       () => cy.xpath('//span[text()="Riders"]//following::mat-card-content[3]'),
+        RiderScreen:      () => cy.xpath('//span[text()="Riders"]//following::span[12]'),
+        RidDBLabel:       () => cy.xpath('//span[text()="Riders"]//following::span[@class="rd-checkbox-label"][2]'),
+        Ridsecval:        () => cy.xpath('//span[@class="pad-lAr0px p-l-34px textWrap ng-star-inserted"][1]'),
+        Ridsecsecval:     () => cy.xpath('//span[text()="Riders"]//following::span[@class=" pad-lAr0px p-l-34px textWrap"][1]'),
+        VARIRiderScr:     () => cy.get('#rider-roles-go-to-native-system-label_label'),
+
         //BillingTab
         BillingTab:       () => cy.xpath('//span[text()="Billing"]'),
         BillOpt:          () => cy.get("#billing-info-bill-option-desc-action-checkbox_label"),
@@ -53,6 +62,8 @@ class Details
         BillAmtLabel:     () => cy.get("#billing-info-modal-premium-label"),
         TotalPrm:         () => cy.get("#policy-details-total-premium-paid-action-checkbox_label"),
         TotalPrmLabel:    () => cy.get("#policy-details-total-premium-paid-label"),
+        BillVerPath:      () => cy.xpath('//span[text()="Billing"]//following::mat-card-content[2]'),
+        VARIBillScr:      () => cy.get('#billing-roles-go-to-native-system-label_label'),
 
         //ValuesTab
         ValuesTab:        () => cy.xpath('//span[text()="Values"]'),
@@ -66,6 +77,11 @@ class Details
         NetCashSurrLab:   () => cy.get('#policy-values-cash-surrender-value-label'),
         FreeOutAmt:       () => cy.get('#policy-values-free-withdrawal-amount-action-checkbox_label'),
         FreeOutAmtLab:    () => cy.get('#policy-values-free-withdrawal-amount-label'),
+        ValuesVerPath:    () => cy.xpath('//span[text()="Values"]//following::mat-card-content[4]'),
+        ValuesTotReinP:   () => cy.xpath('//span[text()="Values"]//following::mat-card-content[7]'),
+        CallenderIcn:     () => cy.get('#policy-values-quote-effective-date-date_toggleDate .mat-icon-button'),
+        ChoseMntYr:       () => cy.get('[aria-label="Choose month and year"]'),
+        CalBody:          () => cy.get('.mat-calendar-body-cell-content'),
 
         //LoansTab
         LoansTab:         () => cy.xpath('//span[text()="Loan"]'),
@@ -76,6 +92,9 @@ class Details
         LoanEffDate:      () => cy.get('#loan-values-quote-effective-date-date_input'),
         MaxLoanAmtLabel:  () => cy.get('#loan-values-max-loanable-value-label'),
         Noloan:           () => cy.get('#loan-transaction-history-no-note-checkbox_label'),
+        LoanCallIcon:     () => cy.get('#loan-values-quote-effective-date-date_toggleDate .mat-icon-button'),
+        LoanVerPath:      () => cy.xpath('//span[text()="Loan"]//following::mat-card-content[6]'),
+        VARILoanScr:      () => cy.get('#loan-roles-go-to-native-system-label_label'),
 
         //FundsTab
         FundsTab:         () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]'),
@@ -87,19 +106,23 @@ class Details
         FundAllocLabel:   () => cy.xpath('//th[text()=" Number "]//following::span[5]'),
         AnnFundNo:        () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]//following::input[2]'),
         Annlabelone:      () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]//following::label[4]'),
-        AnnSecfield:       () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]//following::input[3]'),
+        AnnSecfield:      () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]//following::input[3]'),
         Annlabeltwo:      () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]//following::label[6]'),
         AnnThirdfield:    () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]//following::input[5]'),
         Annlabelthree:    () => cy.xpath('//div[@aria-setsize="10"]//span[text()="Funds"]//following::label[10]'),
-
-        
-
+        FundsVerPath:     () => cy.xpath('//span[text()="Loan"]//following::mat-card-content[2]'),
+        FundsU1VerPath:   () => cy.xpath('//span[text()="Loan"]//following::tr[1]'),
+        VARIpop:          () => cy.xpath('//th[text()=" Investment "]//following::td[@role="gridcell"][1]'),
+        VARIINVPOP:       () => cy.xpath('//td[@class="mat-cell"]'),
+        ClsBtn:           () => cy.xpath('//button[@class="close-icon mat-icon-button"]'),
 
         //SuspenseTab
         SuspenseTab:      () => cy.xpath('//span[text()="Suspense"]'),
         SuspenseChk:      () => cy.get('#checkboxInTable_policySuspense_0_0-input'),
         SusAmtLabel:      () => cy.get('#policy-suspense-suspense-amount'),
         SusEffDatLabel:   () => cy.get('.SuspenseTab #_0__EFFECTIVE_DATE'),
+        Suspscreen:       () => cy.xpath('//span[text()="Suspense"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]'),
+        VARISusScr:       () => cy.get('#suspenseroles-go-to-native-system-label_label'),
 
         //Revolving Error
         RevolvingTab:     () => cy.xpath('//span[text()="Revolving Error"]'),
@@ -107,6 +130,8 @@ class Details
         RevolTypeLabel:   () => cy.get('#_0__TYPE'),
         RevolEffDtLabel:  () => cy.get('#_0__EFFECTIVE_DATE'),
         RevolAmtLabel:    () => cy.get('#_0__REVOLVING_AMOUNT'),
+        RevErrScreen:     () => cy.xpath('//span[text()="Revolving Error"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]'),
+        VARIRevScr:       () => cy.get('#revolvingerror-roles-go-to-native-system-label_label'),
 
         //NotesTab
         NotesTab:         () => cy.xpath('//span[text()="Notes"]'),
@@ -114,10 +139,15 @@ class Details
         NotesTypeNoLabel: () => cy.get('#selected-note-type-no-label'),
         NotesType:        () => cy.get("#selected-note-note-type-desc-action-checkbox_label"),
         NotesTypeLabel:   () => cy.get('#selected-note-note-type-desc-label'),
+        NotesVerPath:     () => cy.xpath('//span[text()="Notes"]//following::mat-card-content[3]'),
+        NotesScreen:      () => cy.xpath('//span[text()="Notes"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]'),
+        VARINotesScr:     () => cy.get('#notes-roles-go-to-native-system-label_label'),
 
         //PendingTransaction
         PendingTranTab:   () => cy.xpath('//span[text()="Pending Transactions"]'),
         PendingTranLab:   () => cy.get('#pending-transactions-no-transaction-label_label'),
+        PenTransScreen:   () => cy.xpath('//span[text()="Pending Transactions"]//following::mat-card-content[@class="mat-card-content ng-star-inserted"][2]'),
+        VARIPenScr:       () => cy.get('#transcationroles-go-to-native-system-label_label'),
     
         //Requested Details Tab:
         ReqDetTab:        () => cy.xpath('//span[@class="pad-lAr-10px"]'),
@@ -144,9 +174,12 @@ class Details
         MyCallDate:       () => cy.get('#_0__DATE_TIME'),
         MyCallReason:     () => cy.get('#_0__REASON'),
         MyCallPolicy:     () => cy.get('.myCallHistoryTable #_0__POLICY_CAMELCASE'),
-
-       
         
+    }
+
+    Details()
+    {
+        this.elements.DetailTab().click({force:true});
     }
 
     PolicyNoChkBox()
@@ -354,6 +387,31 @@ class Details
         this.elements.CallHistTab().click({force:true})
     }
 
+    CallIcon()
+    {
+        this.elements.CallenderIcn().click({force:true})
+    }
+
+    ChooseMnYr()
+    {
+        this.elements.ChoseMntYr().click({force:true})
+    }
+
+    LoanCallIcon()
+    {
+        this.elements.LoanCallIcon().click({force:true})
+    }
+
+    VARIPOPUP()
+    {
+        this.elements.VARIpop().click()
+    }
+
+    VARICloseBtn()
+    {
+        this.elements.ClsBtn().click()
+    }
+
     LoginButton()
     {
         this.elements.LoginBu().click()
@@ -368,6 +426,7 @@ class Details
     {
         this.elements.AuthorizeBut().click()
     }
+
 }
 
 

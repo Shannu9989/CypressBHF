@@ -25,8 +25,10 @@ Feature: Annuities Details Tab Regression suite
     Scenario:  User should be able to check Policy Details checkbox
         When   User checks the checkboxes they should reflect in Requested Details and user should be able to close the call
 
-    Scenario:  User should be able to see the authorized policy, date and time in My call History Widget
+    Scenario:  User should be able to see the authorized Time in My call History Widget
         Then   User should see the time in My Call History Widget
+
+    Scenario:  User should be able to see the authorized policy, date and reason in My call History Widget
          And   User should see the authorized policy in My Call History Widget
          And   User should see the caller's reason in My Call History Widget
          And   User should see the today's date in My Call History Widget
