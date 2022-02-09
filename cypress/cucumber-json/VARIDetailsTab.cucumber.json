@@ -1,0 +1,763 @@
+[
+  {
+    "description": "     As a user I should be able to test VARI Details Tab in CSR Portal.",
+    "keyword": "Feature",
+    "name": "VARI Details Tab Regression suite",
+    "line": 1,
+    "id": "vari-details-tab-regression-suite",
+    "tags": [],
+    "uri": "VARIDetailsTab.feature",
+    "elements": [
+      {
+        "id": "vari-details-tab-regression-suite;as-a-user,-he/she-should-launch-the-application-successfully",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "As a user, he/she should launch the application successfully",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "User should launch the application",
+            "result": {
+              "status": "passed",
+              "duration": 13820000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "User enters UserName",
+            "result": {
+              "status": "passed",
+              "duration": 487000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "User enters Password",
+            "result": {
+              "status": "passed",
+              "duration": 428000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "User clicks on Login Button",
+            "result": {
+              "status": "passed",
+              "duration": 522000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "User should see login message 'Logon successful'",
+            "result": {
+              "status": "passed",
+              "duration": 4304000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-search-for-a-policy",
+        "keyword": "Scenario",
+        "line": 12,
+        "name": "User should be able to search for a policy",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 13,
+            "name": "User enters a policy",
+            "result": {
+              "status": "passed",
+              "duration": 15836000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "User clicks on Search Button",
+            "result": {
+              "status": "passed",
+              "duration": 9285000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "User should be able to see CSR Policy Page 'Customer service Portal - Policy '",
+            "result": {
+              "status": "passed",
+              "duration": 157000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-authorize-the-call",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "User should be able to Authorize the call",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "User clicks on authorize button",
+            "result": {
+              "status": "passed",
+              "duration": 4709000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Policy Number should reflect in authorize label",
+            "result": {
+              "status": "passed",
+              "duration": 1442000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "Full Name should reflect in authorize label",
+            "result": {
+              "status": "passed",
+              "duration": 227000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "Authorized Role should reflect in authorize label",
+            "result": {
+              "status": "passed",
+              "duration": 229000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "Authorized Full Name should reflect in Notes tab",
+            "result": {
+              "status": "passed",
+              "duration": 196000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "Authorized Role should reflect in Notes label",
+            "result": {
+              "status": "passed",
+              "duration": 248000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-check-policy-details-checkbox",
+        "keyword": "Scenario",
+        "line": 25,
+        "name": "User should be able to check Policy Details checkbox",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 26,
+            "name": "User checks the checkboxes they should reflect in Requested Details and user should be able to close the call",
+            "result": {
+              "status": "passed",
+              "duration": 113840000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-see-the-authorized-time-in-my-call-history-widget",
+        "keyword": "Scenario",
+        "line": 28,
+        "name": "User should be able to see the authorized Time in My call History Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 29,
+            "name": "User should see the time in My Call History Widget",
+            "result": {
+              "status": "passed",
+              "duration": 8422000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-see-the-authorized-policy,-date-and-reason-in-my-call-history-widget",
+        "keyword": "Scenario",
+        "line": 31,
+        "name": "User should be able to see the authorized policy, date and reason in My call History Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 32,
+            "name": "User should see the authorized policy in My Call History Widget",
+            "result": {
+              "status": "passed",
+              "duration": 132000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 33,
+            "name": "User should see the caller's reason in My Call History Widget",
+            "result": {
+              "status": "passed",
+              "duration": 38000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 34,
+            "name": "User should see the today's date in My Call History Widget",
+            "result": {
+              "status": "passed",
+              "duration": 53000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-search-for-the-atuthorized-policy-again",
+        "keyword": "Scenario",
+        "line": 36,
+        "name": "User should be able to search for the atuthorized policy again",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 37,
+            "name": "User enters the authorized policy",
+            "result": {
+              "status": "passed",
+              "duration": 997000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 38,
+            "name": "User clicks on the Search Button",
+            "result": {
+              "status": "passed",
+              "duration": 9760000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 39,
+            "name": "User should be able to see CSR Policy Page 'Customer service Portal - Policy '",
+            "result": {
+              "status": "passed",
+              "duration": 69000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-see-the-caller's-name,role,reason-and-time-in-call-history-widget",
+        "keyword": "Scenario",
+        "line": 41,
+        "name": "User should be able to see the Caller's Name,Role,Reason and Time in Call History Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 42,
+            "name": "User clicks on Call history Widget",
+            "result": {
+              "status": "passed",
+              "duration": 3335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 43,
+            "name": "The Name of the Authorized caller should be displayed in Call history Caller Name Label",
+            "result": {
+              "status": "passed",
+              "duration": 82000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 44,
+            "name": "The Role of the Authorized Caller should reflect in Call history Caller Role Label",
+            "result": {
+              "status": "passed",
+              "duration": 81000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 45,
+            "name": "The Reason for which the caller called should reflect in Call history Caller Role Label",
+            "result": {
+              "status": "passed",
+              "duration": 78000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 46,
+            "name": "The time when call is closed should reflect in Call history Date Label",
+            "result": {
+              "status": "passed",
+              "duration": 80000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-open-call-details-widget",
+        "keyword": "Scenario",
+        "line": 48,
+        "name": "User should be able to open Call Details Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 49,
+            "name": "User clicks on the first record on Call history Widget",
+            "result": {
+              "status": "passed",
+              "duration": 820000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 50,
+            "name": "User should be able to see Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 86000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-see-the-caller's-name,role,reason-and-time-in-call-details-widget",
+        "keyword": "Scenario",
+        "line": 52,
+        "name": "User should be able to see the Caller's Name,Role,Reason and Time in Call Details Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 53,
+            "name": "The Name of the Authorized caller should be displayed in Call Details Caller Name Label",
+            "result": {
+              "status": "passed",
+              "duration": 10335000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 54,
+            "name": "The Role of the Authorized Caller should reflect in Call Details Caller Role Label",
+            "result": {
+              "status": "passed",
+              "duration": 100000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 55,
+            "name": "The Reason for which the caller called should reflect in Call Details Caller Role Label",
+            "result": {
+              "status": "passed",
+              "duration": 112000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 56,
+            "name": "The time when call is closed should reflect in Call Details Date Label",
+            "result": {
+              "status": "passed",
+              "duration": 108000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-see-the-details-tab-checked-fields-in-call-details-widget",
+        "keyword": "Scenario",
+        "line": 58,
+        "name": "User should be able to see the Details Tab checked fields in Call Details Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 59,
+            "name": "User should be able to see 'DETAILS' in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 354000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 60,
+            "name": "User should be able to see Policy Number Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 207000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 61,
+            "name": "User should be able to see Policy Number in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 238000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 62,
+            "name": "User should be able to see Issue Date Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 212000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 63,
+            "name": "User should be able to see Policy's Issue Date in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 227000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 64,
+            "name": "User should be able to see Issue State Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 237000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 65,
+            "name": "User should be able to see Policy's Issue State in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 226000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-see-the-values-tab-checked-fields-in-call-details-widget",
+        "keyword": "Scenario",
+        "line": 67,
+        "name": "User should be able to see the Values Tab checked fields in Call Details Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 68,
+            "name": "User should be able to see 'VALUES' in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 297000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 69,
+            "name": "User should be able to see 'Effective Date' in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 220000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 70,
+            "name": "User should be able to see Today's Effective Date in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 225000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 71,
+            "name": "User should be able to see Face Amount Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 203000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 72,
+            "name": "User should be able to see Face Amount in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 237000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 73,
+            "name": "User should be able to see Accumulated Cash Value Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 162000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 74,
+            "name": "User should be able to see Accumulated Cash Value in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 157000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 75,
+            "name": "User should be able to see Net Cash Surrender Value Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 149000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 76,
+            "name": "User should be able to see Net Cash Surrender Value in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 140000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 77,
+            "name": "User should be able to see Quoted Effective Date in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 137000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 78,
+            "name": "User should be able to see Quoted Face Amount Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 141000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 79,
+            "name": "User should be able to see Quoted Face Amount in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 196000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 80,
+            "name": "User should be able to see Quoted Accumulated Cash Value Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 243000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 81,
+            "name": "User should be able to see Quoted Accumulated Cash Value in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 202000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 82,
+            "name": "User should be able to see Quoted Net Cash Surrender Value Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 225000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 83,
+            "name": "User should be able to see Quoted Net Cash Surrender Value in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 235000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "vari-details-tab-regression-suite;user-should-be-able-to-see-the-funds-tab-checked-fields-in-call-details-widget",
+        "keyword": "Scenario",
+        "line": 85,
+        "name": "User should be able to see the Funds Tab checked fields in Call Details Widget",
+        "tags": [],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 86,
+            "name": "User should be able to see 'FUNDS' in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 300000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 87,
+            "name": "User should be able to see 'Investment' Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 241000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 88,
+            "name": "User should be able to see 'Number' Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 244000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 89,
+            "name": "User should be able to see Fund Number in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 236000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 90,
+            "name": "User should be able to see 'Future Allocation' Label in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 234000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 91,
+            "name": "User should be able to see Future Allocation in Call Details Widget",
+            "result": {
+              "status": "passed",
+              "duration": 218000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
