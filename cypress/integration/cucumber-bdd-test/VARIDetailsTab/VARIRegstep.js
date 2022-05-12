@@ -12,7 +12,7 @@ beforeEach(function()
     })
 Given('User should launch the application', function()
 {
-  cy.visit(Cypress.env('PILOT2'))
+  cy.visit(Cypress.env('PILOT1'))
 })
 
 When('User enters UserName', function()

@@ -12,7 +12,7 @@ beforeEach(function()
     })
 Given('User should launch the application', function()
 {
-  cy.visit(Cypress.env('PILOT2'))
+  cy.visit(Cypress.env('PILOT1'))
 })
 
 When('User enters UserName', function()
@@ -478,7 +478,7 @@ When('User checks the checkboxes they should reflect in Requested Details and us
       Details.elements.CalBody().each(($el)=>
       {
           var Month =$el.text()
-          if(Month=='DEC')
+          if(Month=='MAR')
           {
             cy.wrap($el).click({force: true})
           }

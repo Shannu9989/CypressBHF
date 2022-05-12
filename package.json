@@ -13,7 +13,9 @@
     }
   },
   "scripts": {
-    "ANNREG": "npx cypress run --browser chrome  --headed --spec  cypress\\integration\\cucumber-bdd-test\\AnnuitiesDetails.feature"
+    "ANNREG": "npx cypress run --browser chrome  --headed --spec  cypress\\integration\\cucumber-bdd-test\\AnnuitiesDetails.feature",
+    "VARIREG": "npx cypress run --browser chrome  --headed --spec  cypress\\integration\\cucumber-bdd-test\\VARIDetailsTab.feature",
+    "Jen": "start-server-and-test start http://localhost:3000 ANNREG"
   },
   "author": "Subhan",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
     "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-xpath": "^1.6.2",
-    "multiple-cucumber-html-reporter": "^1.18.3"
+    "multiple-cucumber-html-reporter": "^1.18.3",
+    "start-server-and-test": "^1.14.0"
   }
 }

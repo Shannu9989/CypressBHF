@@ -23,7 +23,7 @@
             "name": "User should launch the application",
             "result": {
               "status": "passed",
-              "duration": 13820000000
+              "duration": 49024000000
             }
           },
           {
@@ -33,7 +33,7 @@
             "name": "User enters UserName",
             "result": {
               "status": "passed",
-              "duration": 487000000
+              "duration": 621000000
             }
           },
           {
@@ -43,7 +43,7 @@
             "name": "User enters Password",
             "result": {
               "status": "passed",
-              "duration": 428000000
+              "duration": 546000000
             }
           },
           {
@@ -53,7 +53,7 @@
             "name": "User clicks on Login Button",
             "result": {
               "status": "passed",
-              "duration": 522000000
+              "duration": 971000000
             }
           },
           {
@@ -63,7 +63,7 @@
             "name": "User should see login message 'Logon successful'",
             "result": {
               "status": "passed",
-              "duration": 4304000000
+              "duration": 3746000000
             }
           }
         ]
@@ -83,7 +83,7 @@
             "name": "User enters a policy",
             "result": {
               "status": "passed",
-              "duration": 15836000000
+              "duration": 19371000000
             }
           },
           {
@@ -93,7 +93,7 @@
             "name": "User clicks on Search Button",
             "result": {
               "status": "passed",
-              "duration": 9285000000
+              "duration": 10646000000
             }
           },
           {
@@ -103,7 +103,7 @@
             "name": "User should be able to see CSR Policy Page 'Customer service Portal - Policy '",
             "result": {
               "status": "passed",
-              "duration": 157000000
+              "duration": 59000000
             }
           }
         ]
@@ -123,7 +123,7 @@
             "name": "User clicks on authorize button",
             "result": {
               "status": "passed",
-              "duration": 4709000000
+              "duration": 3749000000
             }
           },
           {
@@ -133,7 +133,7 @@
             "name": "Policy Number should reflect in authorize label",
             "result": {
               "status": "passed",
-              "duration": 1442000000
+              "duration": 2501000000
             }
           },
           {
@@ -143,7 +143,7 @@
             "name": "Full Name should reflect in authorize label",
             "result": {
               "status": "passed",
-              "duration": 227000000
+              "duration": 103000000
             }
           },
           {
@@ -153,7 +153,7 @@
             "name": "Authorized Role should reflect in authorize label",
             "result": {
               "status": "passed",
-              "duration": 229000000
+              "duration": 84000000
             }
           },
           {
@@ -163,7 +163,7 @@
             "name": "Authorized Full Name should reflect in Notes tab",
             "result": {
               "status": "passed",
-              "duration": 196000000
+              "duration": 83000000
             }
           },
           {
@@ -173,7 +173,7 @@
             "name": "Authorized Role should reflect in Notes label",
             "result": {
               "status": "passed",
-              "duration": 248000000
+              "duration": 95000000
             }
           }
         ]
@@ -193,7 +193,7 @@
             "name": "User checks the checkboxes they should reflect in Requested Details and user should be able to close the call",
             "result": {
               "status": "passed",
-              "duration": 113840000000
+              "duration": 121071000000
             }
           }
         ]
@@ -213,7 +213,7 @@
             "name": "User should see the time in My Call History Widget",
             "result": {
               "status": "passed",
-              "duration": 8422000000
+              "duration": 7499000000
             }
           }
         ]
@@ -233,7 +233,7 @@
             "name": "User should see the authorized policy in My Call History Widget",
             "result": {
               "status": "passed",
-              "duration": 132000000
+              "duration": 134000000
             }
           },
           {
@@ -243,7 +243,7 @@
             "name": "User should see the caller's reason in My Call History Widget",
             "result": {
               "status": "passed",
-              "duration": 38000000
+              "duration": 14000000
             }
           },
           {
@@ -253,7 +253,7 @@
             "name": "User should see the today's date in My Call History Widget",
             "result": {
               "status": "passed",
-              "duration": 53000000
+              "duration": 21000000
             }
           }
         ]
@@ -273,7 +273,7 @@
             "name": "User enters the authorized policy",
             "result": {
               "status": "passed",
-              "duration": 997000000
+              "duration": 937000000
             }
           },
           {
@@ -283,7 +283,7 @@
             "name": "User clicks on the Search Button",
             "result": {
               "status": "passed",
-              "duration": 9760000000
+              "duration": 13606000000
             }
           },
           {
@@ -293,7 +293,7 @@
             "name": "User should be able to see CSR Policy Page 'Customer service Portal - Policy '",
             "result": {
               "status": "passed",
-              "duration": 69000000
+              "duration": 40000000
             }
           }
         ]
@@ -313,7 +313,7 @@
             "name": "User clicks on Call history Widget",
             "result": {
               "status": "passed",
-              "duration": 3335000000
+              "duration": 2080000000
             }
           },
           {
@@ -323,7 +323,7 @@
             "name": "The Name of the Authorized caller should be displayed in Call history Caller Name Label",
             "result": {
               "status": "passed",
-              "duration": 82000000
+              "duration": 14000000
             }
           },
           {
@@ -333,7 +333,7 @@
             "name": "The Role of the Authorized Caller should reflect in Call history Caller Role Label",
             "result": {
               "status": "passed",
-              "duration": 81000000
+              "duration": 14000000
             }
           },
           {
@@ -343,7 +343,7 @@
             "name": "The Reason for which the caller called should reflect in Call history Caller Role Label",
             "result": {
               "status": "passed",
-              "duration": 78000000
+              "duration": 15000000
             }
           },
           {
@@ -353,7 +353,7 @@
             "name": "The time when call is closed should reflect in Call history Date Label",
             "result": {
               "status": "passed",
-              "duration": 80000000
+              "duration": 20000000
             }
           }
         ]
@@ -373,7 +373,7 @@
             "name": "User clicks on the first record on Call history Widget",
             "result": {
               "status": "passed",
-              "duration": 820000000
+              "duration": 1304000000
             }
           },
           {
@@ -383,7 +383,7 @@
             "name": "User should be able to see Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 86000000
+              "duration": 9000000
             }
           }
         ]
@@ -403,7 +403,7 @@
             "name": "The Name of the Authorized caller should be displayed in Call Details Caller Name Label",
             "result": {
               "status": "passed",
-              "duration": 10335000000
+              "duration": 10118000000
             }
           },
           {
@@ -413,7 +413,7 @@
             "name": "The Role of the Authorized Caller should reflect in Call Details Caller Role Label",
             "result": {
               "status": "passed",
-              "duration": 100000000
+              "duration": 45000000
             }
           },
           {
@@ -423,7 +423,7 @@
             "name": "The Reason for which the caller called should reflect in Call Details Caller Role Label",
             "result": {
               "status": "passed",
-              "duration": 112000000
+              "duration": 44000000
             }
           },
           {
@@ -433,7 +433,7 @@
             "name": "The time when call is closed should reflect in Call Details Date Label",
             "result": {
               "status": "passed",
-              "duration": 108000000
+              "duration": 48000000
             }
           }
         ]
@@ -453,7 +453,7 @@
             "name": "User should be able to see 'DETAILS' in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 354000000
+              "duration": 282000000
             }
           },
           {
@@ -463,7 +463,7 @@
             "name": "User should be able to see Policy Number Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 207000000
+              "duration": 104000000
             }
           },
           {
@@ -473,7 +473,7 @@
             "name": "User should be able to see Policy Number in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 238000000
+              "duration": 128000000
             }
           },
           {
@@ -483,7 +483,7 @@
             "name": "User should be able to see Issue Date Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 212000000
+              "duration": 244000000
             }
           },
           {
@@ -493,7 +493,7 @@
             "name": "User should be able to see Policy's Issue Date in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 227000000
+              "duration": 487000000
             }
           },
           {
@@ -503,7 +503,7 @@
             "name": "User should be able to see Issue State Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 237000000
+              "duration": 270000000
             }
           },
           {
@@ -513,7 +513,7 @@
             "name": "User should be able to see Policy's Issue State in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 226000000
+              "duration": 219000000
             }
           }
         ]
@@ -533,7 +533,7 @@
             "name": "User should be able to see 'VALUES' in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 297000000
+              "duration": 421000000
             }
           },
           {
@@ -543,7 +543,7 @@
             "name": "User should be able to see 'Effective Date' in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 220000000
+              "duration": 117000000
             }
           },
           {
@@ -553,7 +553,7 @@
             "name": "User should be able to see Today's Effective Date in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 225000000
+              "duration": 101000000
             }
           },
           {
@@ -563,7 +563,7 @@
             "name": "User should be able to see Face Amount Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 203000000
+              "duration": 113000000
             }
           },
           {
@@ -573,7 +573,7 @@
             "name": "User should be able to see Face Amount in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 237000000
+              "duration": 101000000
             }
           },
           {
@@ -583,7 +583,7 @@
             "name": "User should be able to see Accumulated Cash Value Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 162000000
+              "duration": 198000000
             }
           },
           {
@@ -593,7 +593,7 @@
             "name": "User should be able to see Accumulated Cash Value in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 157000000
+              "duration": 303000000
             }
           },
           {
@@ -603,7 +603,7 @@
             "name": "User should be able to see Net Cash Surrender Value Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 149000000
+              "duration": 230000000
             }
           },
           {
@@ -613,7 +613,7 @@
             "name": "User should be able to see Net Cash Surrender Value in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 140000000
+              "duration": 194000000
             }
           },
           {
@@ -623,7 +623,7 @@
             "name": "User should be able to see Quoted Effective Date in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 137000000
+              "duration": 111000000
             }
           },
           {
@@ -633,7 +633,7 @@
             "name": "User should be able to see Quoted Face Amount Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 141000000
+              "duration": 110000000
             }
           },
           {
@@ -643,7 +643,7 @@
             "name": "User should be able to see Quoted Face Amount in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 196000000
+              "duration": 130000000
             }
           },
           {
@@ -653,7 +653,7 @@
             "name": "User should be able to see Quoted Accumulated Cash Value Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 243000000
+              "duration": 124000000
             }
           },
           {
@@ -663,7 +663,7 @@
             "name": "User should be able to see Quoted Accumulated Cash Value in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 202000000
+              "duration": 102000000
             }
           },
           {
@@ -673,7 +673,7 @@
             "name": "User should be able to see Quoted Net Cash Surrender Value Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 225000000
+              "duration": 123000000
             }
           },
           {
@@ -683,7 +683,7 @@
             "name": "User should be able to see Quoted Net Cash Surrender Value in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 235000000
+              "duration": 107000000
             }
           }
         ]
@@ -703,7 +703,7 @@
             "name": "User should be able to see 'FUNDS' in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 300000000
+              "duration": 284000000
             }
           },
           {
@@ -713,7 +713,7 @@
             "name": "User should be able to see 'Investment' Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 241000000
+              "duration": 267000000
             }
           },
           {
@@ -723,7 +723,7 @@
             "name": "User should be able to see 'Number' Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 244000000
+              "duration": 213000000
             }
           },
           {
@@ -733,7 +733,7 @@
             "name": "User should be able to see Fund Number in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 236000000
+              "duration": 199000000
             }
           },
           {
@@ -743,7 +743,7 @@
             "name": "User should be able to see 'Future Allocation' Label in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 234000000
+              "duration": 108000000
             }
           },
           {
@@ -753,7 +753,7 @@
             "name": "User should be able to see Future Allocation in Call Details Widget",
             "result": {
               "status": "passed",
-              "duration": 218000000
+              "duration": 102000000
             }
           }
         ]
